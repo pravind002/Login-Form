@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task/dashboard.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   TextEditingController name = TextEditingController();
   TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +23,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 30),
               child: Center(
                 child: Container(
                   //height: 50,
                   //width: 200,
-                  padding: const EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(5),
                   child: const Text(
                     'Registration Form',
                     style: TextStyle(
@@ -38,6 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 80,
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
@@ -61,12 +66,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            FlatButton(
+            const SizedBox(
+              height: 10,
+            ),
+            MaterialButton(
               onPressed: () {},
               child: const Text(
                 'Forget Password',
                 style: TextStyle(
                   color: Colors.blue,
+                  //backgroundColor: Colors.white,
                 ),
               ),
             ),
@@ -76,10 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 200,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+              child: OutlinedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const MyHomePage()));
+                      MaterialPageRoute(builder: (_) => const DashBoard()));
                 },
                 child: const Text(
                   'Login',
@@ -88,12 +97,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             const SizedBox(
-              height: 130,
+              height: 180,
             ),
             const Text(
               'New User ?',
             ),
-            FlatButton(
+            MaterialButton(
               onPressed: () {},
               child: const Text(
                 'Create Account',
